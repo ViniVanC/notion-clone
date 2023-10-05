@@ -1,0 +1,57 @@
+@import "../../vars";
+
+button {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 15px;
+  border-radius: 8px;
+  border: 3px solid $orange;
+
+  background-color: $orange;
+  color: $teal;
+
+  transition: all 0.3s;
+
+  &:hover {
+    background-color: $teal;
+    color: $orange;
+
+    &::after,
+    &::before {
+      background-color: $orange;
+    }
+  }
+
+  &:active {
+    scale: 0.9;
+  }
+}
+
+.defaultBtn {
+  position: relative;
+
+  &::after,
+  &::before {
+    content: "";
+    width: 18px;
+    height: 4px;
+    border-radius: 20%;
+
+    background-color: $teal;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50%;
+
+    transition: all 0.3s;
+  }
+
+  &::after {
+    rotate: 90deg;
+  }
+}
