@@ -76,3 +76,12 @@ button {
     rotate: 45deg;
   }
 }
+
+.miniBtnNoBg {
+  width: min-content;
+  padding: 3px;
+  font-size: 14px;
+  background: none;
+  border: none;
+  color: $orange;
+}
