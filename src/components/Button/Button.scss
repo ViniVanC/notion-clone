@@ -7,9 +7,12 @@ button {
   align-items: center;
   justify-content: center;
 
-  padding: 15px;
   border-radius: 8px;
   border: 3px solid $orange;
+  padding: 15px;
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
 
   background-color: $orange;
   color: $teal;
@@ -39,12 +42,12 @@ button {
     content: "";
     width: 18px;
     height: 4px;
-    border-radius: 20%;
+    border-radius: 20px;
 
     background-color: $teal;
 
     position: absolute;
-    top: 50%;
+    top: 45%;
     left: 50%;
     translate: -50%;
 
@@ -53,5 +56,23 @@ button {
 
   &::after {
     rotate: 90deg;
+  }
+}
+
+.closeBtn {
+  width: min-content;
+  padding: 10px;
+  margin-left: auto;
+
+  &::after,
+  &::before {
+    width: 14px;
+  }
+
+  &::after {
+    rotate: -45deg;
+  }
+  &::before {
+    rotate: 45deg;
   }
 }
