@@ -17,6 +17,14 @@
 
   transition: all 0.3s ease-in-out;
 
+  @media screen and (max-width: 768px) {
+    max-width: calc(1 / 4 * 100%);
+  }
+
+  @media screen and (max-width: 425px) {
+    max-width: calc(1 / 1.5 * 100%);
+  }
+
   &__header {
     margin-bottom: 10px;
 
