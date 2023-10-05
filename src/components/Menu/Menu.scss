@@ -1,0 +1,27 @@
+@import "../../vars";
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 100%;
+
+  max-width: calc(1 / 6 * 100%);
+  padding: 15px 10px;
+
+  background-color: darken($color: $teal, $amount: 3);
+
+  &__header {
+    margin-bottom: 10px;
+  }
+
+  &__title {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 20px 0 10px;
+  }
+}
+
+.menu-list {
+  &__item {
+  }
+}
