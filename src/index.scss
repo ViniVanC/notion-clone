@@ -1,5 +1,10 @@
 @import "rem";
 
+$orange: #ff8c00;
+$teal: #016161;
+
 body {
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  background-color: $teal;
+  color: #ff8c00;
 }
