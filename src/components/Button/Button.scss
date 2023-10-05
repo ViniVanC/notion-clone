@@ -84,4 +84,8 @@ button {
   background: none;
   border: none;
   color: $orange;
+  &::before,
+  &::after {
+    display: none;
+  }
 }
