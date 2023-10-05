@@ -47,9 +47,9 @@ button {
     background-color: $teal;
 
     position: absolute;
-    top: 45%;
+    top: 50%;
     left: 50%;
-    translate: -50%;
+    translate: -50% -50%;
 
     transition: all 0.3s;
   }

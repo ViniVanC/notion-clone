@@ -1,14 +1,16 @@
-import React from "react";
+import React, { useReducer, useState } from "react";
 import { Button } from "../Button/Button";
 import { MenuList } from "./MenuList/MenuList";
 
 import "./Menu.scss";
 
 export const Menu = () => {
+  const [open, setOpen] = useReducer((o) => !o, true);
+
   return (
-    <nav className="menu">
+    <nav className={`menu ${!open && "close"}`}>
       <header className="menu__header">
-        <Button className={"closeBtn"} />
+        <Button className={`closeBtn ${!open && "close"}`} funk={setOpen} />
       </header>
       <Button />
 
