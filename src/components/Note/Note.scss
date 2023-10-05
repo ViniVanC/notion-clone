@@ -1,0 +1,23 @@
+@import "../../vars";
+
+.note {
+  background-color: darken($color: $teal, $amount: 1.5);
+  padding-top: 10px;
+  &__title {
+    font-size: 25px;
+    font-weight: 700;
+
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__content {
+    font-size: 16px;
+    line-height: 125%;
+
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+}
