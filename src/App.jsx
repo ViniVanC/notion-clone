@@ -5,11 +5,13 @@ import { Note } from "./components/Note/Note";
 function App() {
   return (
     <>
-      <Header />
-      <section>
+      <body>
         <Menu />
-        <Note />
-      </section>
+        <section className="note-section">
+          <Header />
+          <Note />
+        </section>
+      </body>
     </>
   );
 }
