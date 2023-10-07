@@ -1,24 +1,31 @@
 import React, { useReducer, useState } from "react";
+import { v4 } from "uuid";
+import { useNavigate } from "react-router-dom";
 import { Button } from "../Button/Button";
 import { MenuList } from "./MenuList/MenuList";
 
 import "./Menu.scss";
 
 export const Menu = ({ notesList, setNotesList }) => {
+  const navigate = useNavigate();
   const [open, setOpen] = useReducer((o) => !o, true);
 
   function createdNewNote() {
-    setNotesList([
-      ...notesList,
-      {
-        id: notesList[notesList.length - 1].id + 1,
-        title: "Note",
-        content:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, recusandae id ea sequi cumque eligendi ex unde asperiores quia. Excepturi dolor nihil sint quod atque aliquid fugiat eligendi, quo ex.",
-        date: new Date(),
-        link: "",
-      },
-    ]);
+    let newNote = {
+      id: v4(),
+      title: "",
+      content: "",
+      date: new Date(),
+      linkTitle: "",
+    };
+
+    if (!newNote.title) {
+      newNote = { ...newNote, linkTitle: "Undefined" };
+    }
+
+    setNotesList([...notesList, newNote]);
+
+    navigate(`/note-${newNote.id}`);
   }
 
   function deleteItem(id) {

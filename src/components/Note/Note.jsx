@@ -62,7 +62,7 @@ export const Note = ({ note, setNewNote }) => {
         <div className="note__inner">
           <input
             type="text"
-            className={`note__title`}
+            className={`note__title `}
             value={newThisNote.title}
             placeholder="Title..."
             onChange={handleChangeTitle}

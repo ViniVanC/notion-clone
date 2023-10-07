@@ -6,24 +6,29 @@ import { Menu } from "./components/Menu/Menu";
 import { Note } from "./components/Note/Note";
 
 function App() {
-  const [notesList, setNotesList] = useState([
+  const initialNotes = [
     {
       id: v4(),
       title: "Note 1",
       content:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, recusandae id ea sequi cumque eligendi ex unde asperiores quia. Excepturi dolor nihil sint quod atque aliquid fugiat eligendi, quo ex.",
       date: new Date(),
-      link: "",
     },
     {
       id: v4(),
-      title: "Note 2",
+      title: "",
       content:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, recusandae id ea sequi cumque eligendi ex unde asperiores quia. Excepturi dolor nihil sint quod atque aliquid fugiat eligendi, quo ex.",
       date: new Date(),
-      link: "",
     },
-  ]);
+  ];
+
+  const [notesList, setNotesList] = useState(
+    initialNotes.map((note) => ({
+      ...note,
+      linkTitle: note.title || "Undefined",
+    }))
+  );
 
   const [newNote, setNewNote] = useState({
     id: undefined,

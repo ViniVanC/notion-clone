@@ -9,7 +9,7 @@ export const MenuList = ({ list, deleteItem }) => {
       {list?.map((listItem) => (
         <li key={listItem.id} className="menu-list__item">
           <Link className="menu-list__link" to={`/note-${listItem.id}`}>
-            {listItem.title}
+            {listItem.linkTitle}
           </Link>
 
           <Button
