@@ -8,26 +8,13 @@ button {
   justify-content: center;
 
   border-radius: 8px;
-  border: 3px solid $orange;
+  border: 3px solid;
   padding: 15px;
   &:not(:last-child) {
     margin-bottom: 10px;
   }
 
-  background-color: $orange;
-  color: $teal;
-
   transition: all 0.3s;
-
-  &:hover {
-    background-color: $teal;
-    color: $orange;
-
-    &::after,
-    &::before {
-      background-color: $orange;
-    }
-  }
 
   &:active {
     scale: 0.9;
@@ -43,8 +30,6 @@ button {
     width: 18px;
     height: 4px;
     border-radius: 20px;
-
-    background-color: $teal;
 
     position: absolute;
     top: 50%;
@@ -81,9 +66,9 @@ button {
   width: min-content;
   padding: 3px;
   font-size: 14px;
-  background: none;
+  background-color: transparent !important;
   border: none;
-  color: $orange;
+
   &::before,
   &::after {
     display: none;

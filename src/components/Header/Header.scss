@@ -1,7 +1,49 @@
+@import "../../vars";
+
 .header {
+  position: relative;
   display: flex;
-  align-self: center;
+  align-items: center;
   justify-content: center;
 
   padding: 8px 15px;
+
+  .miniBtnNoBg {
+    position: absolute;
+    right: 20px;
+    font-size: 20px;
+  }
+}
+
+main.teal {
+  .header {
+    .miniBtnNoBg {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 1px solid $orange;
+      background: linear-gradient(to right, $orange 50%, $teal 50%);
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 100%;
+        background: $orange;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 50%;
+        height: 100%;
+        background: $teal;
+      }
+    }
+  }
 }

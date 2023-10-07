@@ -23,6 +23,9 @@ function App() {
     },
   ];
 
+  const themeList = ["dark", "light", "teal"];
+  const [currentThemeNumber, setCurrentThemeNumber] = useState(0);
+
   const [notesList, setNotesList] = useState(
     initialNotes.map((note) => ({
       ...note,
@@ -64,11 +67,15 @@ function App() {
   }, [newNote]);
 
   return (
-    <main>
+    <main className={`${themeList[currentThemeNumber]}`}>
       <Router>
         <Menu notesList={notesList} setNotesList={setNotesList} />
         <section className="note-section">
-          <Header />
+          <Header
+            themeList={themeList}
+            currentThemeNumber={currentThemeNumber}
+            setCurrentThemeNumber={setCurrentThemeNumber}
+          />
 
           <Routes basename="/">
             {notesList.map((note) => (

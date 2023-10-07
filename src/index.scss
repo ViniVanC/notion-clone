@@ -16,8 +16,162 @@
 
 main {
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-  background-color: $teal;
-  color: #ff8c00;
+
+  &.dark {
+    background-color: $dark;
+    color: $light;
+
+    button {
+      border-color: $light;
+      background-color: $light;
+      color: $dark;
+
+      &.miniBtnNoBg {
+        color: $light;
+      }
+
+      &::after,
+      &::before {
+        background-color: $dark;
+      }
+
+      &:hover {
+        background-color: $dark;
+        color: $light;
+
+        &::after,
+        &::before {
+          background-color: $light;
+        }
+      }
+    }
+
+    a {
+      color: $light;
+    }
+
+    .menu {
+      background-color: darken($color: $dark, $amount: 3);
+    }
+
+    .menu-list__item {
+      &:hover {
+        background-color: lighten($color: $dark, $amount: 2);
+      }
+    }
+
+    .note {
+      input,
+      textarea {
+        color: $light;
+      }
+      background-color: darken($color: $dark, $amount: 1.5);
+    }
+  }
+
+  &.light {
+    background-color: $light;
+    color: $dark;
+
+    button {
+      border-color: $dark;
+      background-color: $dark;
+      color: $light;
+
+      &.miniBtnNoBg {
+        color: $dark;
+      }
+
+      &::after,
+      &::before {
+        background-color: $light;
+      }
+
+      &:hover {
+        background-color: $light;
+        color: $dark;
+
+        &::after,
+        &::before {
+          background-color: $dark;
+        }
+      }
+    }
+
+    a {
+      color: $dark;
+    }
+
+    .menu {
+      background-color: darken($color: $light, $amount: 3);
+    }
+
+    .menu-list__item {
+      &:hover {
+        background-color: lighten($color: $light, $amount: 2);
+      }
+    }
+
+    .note {
+      input,
+      textarea {
+        color: $dark;
+      }
+      background-color: darken($color: $light, $amount: 1.5);
+    }
+  }
+
+  &.teal {
+    background-color: $teal;
+    color: $orange;
+
+    button {
+      border-color: $orange;
+      background-color: $orange;
+      color: $teal;
+
+      &.miniBtnNoBg {
+        color: $orange;
+      }
+
+      &::after,
+      &::before {
+        background-color: $teal;
+      }
+
+      &:hover {
+        background-color: $teal;
+        color: $orange;
+
+        &::after,
+        &::before {
+          background-color: $orange;
+        }
+      }
+    }
+
+    a {
+      color: $orange;
+    }
+
+    .menu {
+      background-color: darken($color: $teal, $amount: 3);
+    }
+
+    .menu-list__item {
+      &:hover {
+        background-color: lighten($color: $teal, $amount: 2);
+      }
+    }
+
+    .note {
+      input,
+      textarea {
+        color: $orange;
+      }
+      background-color: darken($color: $teal, $amount: 1.5);
+    }
+  }
 }
 
 a {
