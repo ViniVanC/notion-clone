@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { v4 } from "uuid";
 import { Header } from "./components/Header/Header";
@@ -25,6 +25,32 @@ function App() {
     },
   ]);
 
+  const [newNote, setNewNote] = useState({
+    id: undefined,
+    title: "",
+    content: "",
+  });
+
+  useEffect(() => {
+    if (newNote.id) {
+      setNotesList((prevNotesList) => {
+        return prevNotesList.map((note) =>
+          note.id === newNote.id
+            ? { ...note, title: newNote.title, content: newNote.content }
+            : note
+        );
+      });
+    }
+
+    if (newNote.id !== undefined) {
+      setNewNote({
+        id: undefined,
+        title: "",
+        content: "",
+      });
+    }
+  }, [newNote]);
+
   return (
     <main>
       <Router>
@@ -37,7 +63,13 @@ function App() {
               <Route
                 key={note.id}
                 path={`/note-${note.id}`}
-                element={<Note note={note} />}
+                element={
+                  <Note
+                    note={note}
+                    setNotesList={setNotesList}
+                    setNewNote={setNewNote}
+                  />
+                }
               />
             ))}
           </Routes>
