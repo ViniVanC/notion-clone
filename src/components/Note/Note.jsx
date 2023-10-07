@@ -62,17 +62,15 @@ export const Note = ({ note, setNewNote }) => {
         <div className="note__inner">
           <input
             type="text"
-            className={`note__title ${
-              !note.title ? "note__title-default" : ""
-            }`}
+            className={`note__title`}
             value={newThisNote.title}
+            placeholder="Title..."
             onChange={handleChangeTitle}
           />
           <textarea
-            className={`note__content ${
-              !note.content ? "note__content-default" : ""
-            }`}
+            className={`note__content`}
             value={newThisNote.content}
+            placeholder="Enter text..."
             onChange={handleChangeTextarea}
           />
         </div>
