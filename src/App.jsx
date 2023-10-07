@@ -18,15 +18,13 @@ function App() {
   // console.log(notesList);
 
   return (
-    <>
-      <body>
-        <Menu notesList={notesList} setNotesList={setNotesList} />
-        <section className="note-section">
-          <Header />
-          <Note />
-        </section>
-      </body>
-    </>
+    <main>
+      <Menu notesList={notesList} setNotesList={setNotesList} />
+      <section className="note-section">
+        <Header />
+        <Note />
+      </section>
+    </main>
   );
 }
 
