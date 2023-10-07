@@ -13,6 +13,7 @@ export const Note = ({ note, setNewNote }) => {
       id: note.id,
       title: note.title,
       content: note.content,
+      linkTitle: note.title,
     });
   }, [note]);
 
@@ -42,6 +43,7 @@ export const Note = ({ note, setNewNote }) => {
     setNewThisNote({
       ...newThisNote,
       title: e.target.value,
+      linkTitle: e.target.value,
     });
     setHasTitleChanged(true);
     setIsDataSaved(false); // Скидаємо прапорець, якщо дані знову змінюються

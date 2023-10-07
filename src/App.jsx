@@ -34,6 +34,7 @@ function App() {
     id: undefined,
     title: "",
     content: "",
+    linkTitle: "",
   });
 
   useEffect(() => {
@@ -41,7 +42,12 @@ function App() {
       setNotesList((prevNotesList) => {
         return prevNotesList.map((note) =>
           note.id === newNote.id
-            ? { ...note, title: newNote.title, content: newNote.content }
+            ? {
+                ...note,
+                title: newNote.title,
+                content: newNote.content,
+                linkTitle: newNote.title || "Undefined",
+              }
             : note
         );
       });
@@ -52,6 +58,7 @@ function App() {
         id: undefined,
         title: "",
         content: "",
+        linkTitle: "",
       });
     }
   }, [newNote]);
