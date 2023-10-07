@@ -3,13 +3,7 @@ import { Container } from "../Container/Container";
 
 import "./Note.scss";
 
-export const Note = ({
-  note = {
-    title: "note1",
-    content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, recusandae id ea sequi cumque eligendi ex unde asperiores quia. Excepturi dolor nihil sint quod atque aliquid fugiat eligendi, quo ex.",
-  },
-}) => {
+export const Note = ({ note }) => {
   return (
     <section className="note-section note">
       <Container>
