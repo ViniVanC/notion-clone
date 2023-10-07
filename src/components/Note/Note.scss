@@ -1,6 +1,26 @@
 @import "../../vars";
 
 .note {
+  input,
+  textarea {
+    width: 100%;
+    color: $orange;
+    background-color: transparent;
+  }
+
+  textarea {
+    // display: flex;
+    flex: 1 1 100%;
+    overflow-y: hidden; // Ховати зайвий вміст
+    resize: none;
+  }
+
+  &__inner {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
   background-color: darken($color: $teal, $amount: 1.5);
   padding-top: 10px;
   &__title {

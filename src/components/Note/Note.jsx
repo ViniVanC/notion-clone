@@ -4,6 +4,9 @@ import "./Note.scss";
 
 export const Note = ({ note, setNewNote }) => {
   const [newThisNote, setNewThisNote] = useState({});
+  const [hasTitleChanged, setHasTitleChanged] = useState(false);
+  const [hasContentChanged, setHasContentChanged] = useState(false);
+  const [isDataSaved, setIsDataSaved] = useState(false);
 
   useEffect(() => {
     setNewThisNote({
@@ -13,10 +16,6 @@ export const Note = ({ note, setNewNote }) => {
     });
   }, [note]);
 
-  const [hasTitleChanged, setHasTitleChanged] = useState(false);
-  const [hasContentChanged, setHasContentChanged] = useState(false);
-  const [isDataSaved, setIsDataSaved] = useState(false);
-
   useEffect(() => {
     let timeoutId;
 
@@ -24,7 +23,7 @@ export const Note = ({ note, setNewNote }) => {
       timeoutId = setTimeout(() => {
         saveData();
         setIsDataSaved(true); // Позначаємо, що дані були збережені
-      }, 1000);
+      }, 10);
     }
 
     return () => {
