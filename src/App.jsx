@@ -1,10 +1,11 @@
-import { useEffect, useState, useMemo } from "react";
+import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { v4 } from "uuid";
 import { Header } from "./components/Header/Header";
-import { Menu } from "./components/Menu/Menu";
-import { Note } from "./components/Note/Note";
 import { Home } from "./Pages/Home/Home";
+import { Notes } from "./Pages/Notes/Notes";
+import { LogIn } from "./Pages/LoginRegister/LogIn";
+import { Register } from "./Pages/LoginRegister/Register";
 
 function App() {
   const initialNotes = [
@@ -70,30 +71,26 @@ function App() {
   return (
     <main className={`${themeList[currentThemeNumber]}`}>
       <Router>
-        <Menu notesList={notesList} setNotesList={setNotesList} />
         <section className="note-section">
           <Header
             themeList={themeList}
             currentThemeNumber={currentThemeNumber}
             setCurrentThemeNumber={setCurrentThemeNumber}
           />
-
           <Routes>
             <Route path="/" element={<Home />} />
-
-            {notesList.map((note) => (
-              <Route
-                key={note.id}
-                path={`/note-${note.id}`}
-                element={
-                  <Note
-                    note={note}
-                    setNotesList={setNotesList}
-                    setNewNote={setNewNote}
-                  />
-                }
-              />
-            ))}
+            <Route path="/login" element={<LogIn />} />
+            <Route path="/register" element={<Register />} />
+            <Route
+              path="/notes"
+              element={
+                <Notes
+                  notesList={notesList}
+                  setNotesList={setNotesList}
+                  setNewNote={setNewNote}
+                />
+              }
+            />
           </Routes>
         </section>
       </Router>
