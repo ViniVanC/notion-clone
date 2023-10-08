@@ -4,8 +4,9 @@
   input,
   textarea {
     width: 100%;
-    color: $orange;
     background-color: transparent;
+    border: none;
+    padding: 0;
 
     &::placeholder {
       color: inherit;
@@ -26,7 +27,6 @@
     flex-direction: column;
   }
 
-  background-color: darken($color: $teal, $amount: 1.5);
   padding-top: 10px;
   &__title {
     font-size: 25px;
