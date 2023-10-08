@@ -4,6 +4,7 @@ import { Button } from "../Button/Button";
 import { FaSun, FaMoon } from "react-icons/fa";
 
 import "./Header.scss";
+import { Link } from "react-router-dom";
 
 export const Header = ({
   themeList,
@@ -20,7 +21,9 @@ export const Header = ({
 
   return (
     <header className="header">
-      <Logo size={40} />
+      <Link to={"/"} style={{ textDecoration: "none" }}>
+        <Logo size={40} />
+      </Link>
       <Button className={"miniBtnNoBg"} funk={changeTheme}>
         {themeList[currentThemeNumber] === "dark" ? (
           <FaMoon />

@@ -1,12 +1,13 @@
 import React from "react";
 import { Container } from "../../components/Container/Container";
+import { Link } from "react-router-dom";
 import "./Home.scss";
 
 export const Home = () => {
   return (
-    <div className="home">
+    <section className="home section">
       <Container>
-        <div className="home__inner">
+        <div className="home__inner section__inner">
           <h1 className="title">Tanuki Note</h1>
           <p className="description">
             Hi, this is an app developed by{" "}
@@ -20,14 +21,13 @@ export const Home = () => {
             </a>
             .
           </p>
-          <div className="description">
-            I made this app to improve my skills.
-          </div>
-          <div className="description">
-            This is how I see a concise notebook.
-          </div>
+          <p className="description">I made this app to improve my skills.</p>
+          <p className="description">This is how I see a concise notebook.</p>
+          <Link className="defaultBtn" to={"notes/"}>
+            Go to notes
+          </Link>
         </div>
       </Container>
-    </div>
+    </section>
   );
 };
