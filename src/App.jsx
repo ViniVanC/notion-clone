@@ -4,6 +4,7 @@ import { v4 } from "uuid";
 import { Header } from "./components/Header/Header";
 import { Menu } from "./components/Menu/Menu";
 import { Note } from "./components/Note/Note";
+import { Home } from "./Pages/Home/Home";
 
 function App() {
   const initialNotes = [
@@ -77,7 +78,9 @@ function App() {
             setCurrentThemeNumber={setCurrentThemeNumber}
           />
 
-          <Routes basename="/">
+          <Routes>
+            <Route path="/" element={<Home />} />
+
             {notesList.map((note) => (
               <Route
                 key={note.id}

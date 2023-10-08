@@ -188,3 +188,20 @@ a {
   flex-direction: column;
   flex: 1 1 auto;
 }
+
+.title {
+  font-size: 30px;
+  font-weight: 700;
+
+  &:not(:last-child) {
+    margin-bottom: 16px;
+  }
+}
+
+.description {
+  font-size: 18px;
+
+  &:not(:last-child) {
+    margin-bottom: 8px;
+  }
+}
