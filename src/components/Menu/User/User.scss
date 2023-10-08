@@ -1,0 +1,23 @@
+.user {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  &__photo {
+    height: 35px;
+    width: 35px;
+    overflow: hidden;
+    border-radius: 8px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &__name {
+    font-size: 18px;
+    font-weight: 600;
+  }
+}

@@ -5,6 +5,7 @@ import { Button } from "../Button/Button";
 import { MenuList } from "./MenuList/MenuList";
 
 import "./Menu.scss";
+import { User } from "./User/User";
 
 export const Menu = ({ notesList, setNotesList }) => {
   const navigate = useNavigate();
@@ -35,6 +36,7 @@ export const Menu = ({ notesList, setNotesList }) => {
   return (
     <nav className={`menu ${!open && "close"}`}>
       <header className="menu__header">
+        <User />
         <Button className={`closeBtn ${!open && "close"}`} funk={setOpen} />
       </header>
       <Button funk={createdNewNote} />
