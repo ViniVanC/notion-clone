@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Container } from "../Container/Container";
 import "./Note.scss";
+import { Menu } from "../Menu/Menu";
 
-export const Note = ({ note, setNewNote }) => {
+export const Note = ({ note, setNewNote, notesList, setNotesList }) => {
   const [newThisNote, setNewThisNote] = useState({});
   const [hasTitleChanged, setHasTitleChanged] = useState(false);
   const [hasContentChanged, setHasContentChanged] = useState(false);
@@ -59,24 +60,28 @@ export const Note = ({ note, setNewNote }) => {
   };
 
   return (
-    <section className="note-section note">
-      <Container>
-        <div className="note__inner">
-          <input
-            type="text"
-            className={`note__title `}
-            value={newThisNote.title}
-            placeholder="Title..."
-            onChange={handleChangeTitle}
-          />
-          <textarea
-            className={`note__content`}
-            value={newThisNote.content}
-            placeholder="Enter text..."
-            onChange={handleChangeTextarea}
-          />
-        </div>
-      </Container>
-    </section>
+    <>
+      <Menu notesList={notesList} setNotesList={setNotesList} />
+
+      <section className="note-section note">
+        <Container>
+          <div className="note__inner">
+            <input
+              type="text"
+              className={`note__title `}
+              value={newThisNote.title}
+              placeholder="Title..."
+              onChange={handleChangeTitle}
+            />
+            <textarea
+              className={`note__content`}
+              value={newThisNote.content}
+              placeholder="Enter text..."
+              onChange={handleChangeTextarea}
+            />
+          </div>
+        </Container>
+      </section>
+    </>
   );
 };

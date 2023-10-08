@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { v4 } from "uuid";
 import { Header } from "./components/Header/Header";
+import { Note } from "./components/Note/Note";
 import { Home } from "./Pages/Home/Home";
 import { Notes } from "./Pages/Notes/Notes";
 import { LogIn } from "./Pages/LoginRegister/LogIn";
@@ -78,10 +79,29 @@ function App() {
             setCurrentThemeNumber={setCurrentThemeNumber}
           />
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route
+              path="/"
+              element={
+                <Home notesList={notesList} setNotesList={setNotesList} />
+              }
+            />
             <Route path="/login" element={<LogIn />} />
             <Route path="/register" element={<Register />} />
-            <Route
+            {notesList.map((note) => (
+              <Route
+                key={note.id}
+                path={`/note-${note.id}`}
+                element={
+                  <Note
+                    note={note}
+                    notesList={notesList}
+                    setNotesList={setNotesList}
+                    setNewNote={setNewNote}
+                  />
+                }
+              />
+            ))}
+            {/* <Route
               path="/notes"
               element={
                 <Notes
@@ -90,7 +110,7 @@ function App() {
                   setNewNote={setNewNote}
                 />
               }
-            />
+            /> */}
           </Routes>
         </section>
       </Router>
